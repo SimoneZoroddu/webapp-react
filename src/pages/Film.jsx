@@ -13,11 +13,11 @@ export default function Film() {
 
     useEffect(() => {
 
-        const api_url = import.meta.env.VITE_API_ADDRESS + '/movies'
+        const api_url = import.meta.env.VITE_API_ADDRESS + '/movies/'
 
-        axios.get(`${api_url}/${filmId}`)
+        axios.get(`${api_url}${filmId}`)
             .then(datas => {
-                //console.log(datas.data)
+                console.log(datas.data)
                 setFilm([datas.data])
             }
             )
@@ -34,6 +34,13 @@ export default function Film() {
                                 <div className="card-body">
                                     <h5 className="card-title">{film.title}</h5>
                                     <p className="card-text">{film.director}{film.genre}{film.release_year}</p>
+                                    {
+                                        film.reviews?.map((review, index) => (
+                                            <div key={index}>
+                                                <div>{review.name}{review.text}{review.vote}</div>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
