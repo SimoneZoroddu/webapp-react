@@ -1,4 +1,4 @@
-
+import { NavLink } from 'react-router-dom'
 
 export default function AppHeader() {
 
@@ -7,10 +7,10 @@ export default function AppHeader() {
 
         <nav className="navbar bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <NavLink to='/' className="navbar-brand">
                     <i className="bi bi-camera-reels-fill px-3"></i>
-                    My Films
-                </a>
+                    <span>My Films</span>
+                </NavLink>
             </div>
         </nav>
     )

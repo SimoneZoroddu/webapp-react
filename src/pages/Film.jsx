@@ -26,6 +26,10 @@ export default function Film() {
             )
     }, [])
 
+    function starsVote(vote) {
+        return '★'.repeat(vote)
+    }
+
     return (
         <div className="container text-center">
             <div className="row">
@@ -39,6 +43,16 @@ export default function Film() {
                                     <div className="card-text"><span className="text-warning">Film Director:</span> {film.director}</div>
                                     <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
                                     <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
+                                    <div>Recensioni:</div>
+                                    {
+                                        film.reviews?.map((review, index) => (
+                                            <div key={index}>
+                                                <div className="text-warning">{review.name}</div>
+                                                <div className="text-danger">{starsVote(review.vote)} {film.title}</div>
+                                                <div>{review.text}</div>
+                                            </div>
+                                        ))
+                                    }
                                     <Link to='/' className="text-danger d-flex justify-content-center text-decoration-none bg-primary rounded mx-5 mt-2">Torna alla Home</Link>
                                 </div>
                             </div>
