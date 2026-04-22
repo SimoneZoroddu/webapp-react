@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 
 export default function HomePage() {
+
+    const port = import.meta.env.VITE_PORT
 
     const [films, setFilms] = useState([])
 
@@ -21,12 +25,15 @@ export default function HomePage() {
             <div className="row">
                 {
                     films.map((film, index) => (
-                        <div key={index} className="col">
-                            <div className="card" style={{ width: '18rem' }}>
-                                <img src={`http://localhost:3010/${film.title}.jpg`} className="card-img-top" alt={film.title} />
+                        <div key={index} className="col g-3">
+                            <div className="card h-100 bg-black text-white mx-auto" style={{ width: '18rem' }}>
+                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title} />
                                 <div className="card-body">
-                                    <h5 className="card-title">{film.title}</h5>
-                                    <p className="card-text">{film.director}{film.genre}{film.release_year}</p>
+                                    <h3 className="card-title mt-2 text-center">{film.title}</h3>
+                                    <div className="card-text mt-2"><span className="text-warning">Film Director:</span> {film.director}</div>
+                                    <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
+                                    <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
+                                    <Link to={`/films/${film.id}`} className="text-danger d-flex justify-content-center text-decoration-none bg-primary mt-2 rounded mx-5">Dettagli</Link>
                                 </div>
                             </div>
                         </div>

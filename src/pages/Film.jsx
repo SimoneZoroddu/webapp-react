@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
 import { useParams } from "react-router-dom"
+import { Link } from 'react-router-dom'
+
 
 export default function Film() {
 
-
+    const port = import.meta.env.VITE_PORT
+    
     const { filmId } = useParams()
 
     console.log(filmId);
@@ -24,23 +27,19 @@ export default function Film() {
     }, [])
 
     return (
-        <div className="container">
+        <div className="container text-center">
             <div className="row">
                 {
                     film.map((film, index) => (
                         <div key={index} className="col">
-                            <div className="card" style={{ width: '18rem' }}>
-                                <img src={`http://localhost:3010/${film.title}.jpg`} className="card-img-top" alt={film.title} />
+                            <div className="card h-100 bg-black text-white mx-auto" style={{ width: '18rem' }}>
+                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title}  />
                                 <div className="card-body">
-                                    <h5 className="card-title">{film.title}</h5>
-                                    <p className="card-text">{film.director}{film.genre}{film.release_year}</p>
-                                    {
-                                        film.reviews?.map((review, index) => (
-                                            <div key={index}>
-                                                <div>{review.name}{review.text}{review.vote}</div>
-                                            </div>
-                                        ))
-                                    }
+                                    <h3 className="card-title text-center mt-2">{film.title}</h3>
+                                    <div className="card-text"><span className="text-warning">Film Director:</span> {film.director}</div>
+                                    <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
+                                    <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
+                                    <Link to='/' className="text-danger d-flex justify-content-center text-decoration-none bg-primary rounded mx-5 mt-2">Torna alla Home</Link>
                                 </div>
                             </div>
                         </div>

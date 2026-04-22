@@ -1,10 +1,17 @@
 
 
-export default function AppHeader(){
+export default function AppHeader() {
 
 
-    return(
+    return (
 
-        <h1>Header</h1>
+        <nav className="navbar bg-body-tertiary">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="#">
+                    <i className="bi bi-camera-reels-fill px-3"></i>
+                    My Films
+                </a>
+            </div>
+        </nav>
     )
 }
