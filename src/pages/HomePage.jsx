@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { GlobalContextUse } from "../context/GlobalContext"
 
 
 export default function HomePage() {
@@ -9,13 +10,20 @@ export default function HomePage() {
 
     const [films, setFilms] = useState([])
 
+
+    const { setLoading } = GlobalContextUse()
+
     useEffect(() => {
+
+        setLoading(true)
+
         const api_url = import.meta.env.VITE_API_ADDRESS + '/movies'
 
         axios.get(api_url)
             .then(datas => {
                 // console.log(datas.data)
                 setFilms(datas.data)
+                setLoading(false)
             }
             )
     }, [])
