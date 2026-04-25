@@ -7,12 +7,13 @@ import FormNewMovie from "../components/FormNewMovie"
 export default function Film() {
 
     const port = import.meta.env.VITE_PORT
-    
+
     const { filmId } = useParams()
 
-    console.log(filmId);
+    //console.log(filmId);
 
     const [film, setFilm] = useState([])
+    const [addNewReviewCheck, setAddNewReviewCheck] = useState(false)
 
     useEffect(() => {
 
@@ -20,11 +21,11 @@ export default function Film() {
 
         axios.get(`${api_url}${filmId}`)
             .then(datas => {
-                console.log(datas.data)
+                //console.log(datas.data)
                 setFilm([datas.data])
             }
             )
-    }, [])
+    }, [addNewReviewCheck])
 
     function starsVote(vote) {
         return '★'.repeat(vote)
@@ -37,13 +38,13 @@ export default function Film() {
                     film.map((film, index) => (
                         <div key={index} className="col">
                             <div className="card h-100 bg-black text-white mx-auto" style={{ width: '18rem' }}>
-                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title}  />
+                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title} />
                                 <div className="card-body">
                                     <h3 className="card-title text-center mt-2">{film.title}</h3>
                                     <div className="card-text"><span className="text-warning">Film Director :</span> {film.director}</div>
                                     <div className="mt-2"><span className="text-danger">Genre :</span> {film.genre}</div>
                                     <div className="mt-2"><span className="text-primary">Release :</span> {film.release_year}</div>
-                                    <FormNewMovie/>
+                                    <FormNewMovie filmId={filmId} setAddNewReviewCheck={setAddNewReviewCheck} />
                                     <div>Recensioni :</div>
                                     {
                                         film.reviews?.map((review, index) => (
