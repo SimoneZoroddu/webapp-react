@@ -14,7 +14,7 @@ export default function HomePage() {
 
         axios.get(api_url)
             .then(datas => {
-                console.log(datas.data)
+                // console.log(datas.data)
                 setFilms(datas.data)
             }
             )

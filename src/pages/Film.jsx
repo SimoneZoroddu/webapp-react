@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
-
+import FormNewMovie from "../components/FormNewMovie"
 
 export default function Film() {
 
@@ -40,10 +40,11 @@ export default function Film() {
                                 <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title}  />
                                 <div className="card-body">
                                     <h3 className="card-title text-center mt-2">{film.title}</h3>
-                                    <div className="card-text"><span className="text-warning">Film Director:</span> {film.director}</div>
-                                    <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
-                                    <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
-                                    <div>Recensioni:</div>
+                                    <div className="card-text"><span className="text-warning">Film Director :</span> {film.director}</div>
+                                    <div className="mt-2"><span className="text-danger">Genre :</span> {film.genre}</div>
+                                    <div className="mt-2"><span className="text-primary">Release :</span> {film.release_year}</div>
+                                    <FormNewMovie/>
+                                    <div>Recensioni :</div>
                                     {
                                         film.reviews?.map((review, index) => (
                                             <div key={index}>

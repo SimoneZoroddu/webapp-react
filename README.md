@@ -16,6 +16,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 
+###
 
 Ciao ragazzi,
 esercizio di oggi: Setup Web App React
@@ -55,3 +56,62 @@ In ultimo, effettuiamo una chiamata AJAX dalla pagina di dettaglio per ottenere 
 
 Bonus
 Curare l’aspetto estetico della vostra applicazione
+
+###
+Oggi proseguite con il lavoro assegnato ieri, fino a completamento delle 4 milestone bonus incluso. 
+Per chi ha terminato ecco alcuni bonus extra da svolgere:
+
+Frontend: Nella pagina di elenco films, quando l'utente e' in hover sull'immagine del film appare un'icona di un occhio 👁️, cliccando l'immagine si apre una modale con all'interno i dettagli del film completi + il pulsante per visitare il singolo film
+Frontend: Creare componenti riutilizzabili per le card dei film, l'elenco delle recensioni nella pagina del libro e la singola recensione (tutto componentizzato)
+Frontend: Nella pagina di dettaglio del libro mostrare le stelline ✨ per indicare il voto al posto del semplice numero (se nn lo avete gia fatto)
+Front/Back: Aggiungere il voto medio delle recensioni a ciascun film. La media voto dovra' poi essere mostrata nella pagina del singolo film quindi dovra' essere recuperata dal database cosi che la frontend riceva il dato e possa usarlo
+Frontend: Predisporre una pagina Admin dove mostrare una tabella con l'elenco dei film     ANTONIO
+Frontend: Aggiungere un form statico allla pagine del singolo libro per l'invio di una recensione
+
+Buon divertimento e confermate lettura come al solito
+
+
+
+###
+Ciao Classe,
+esercizio di oggi: 
+
+repo: webapp-react 
+
+Esercizio
+Miglioriamo l’esperienza dell’utente inserendo 
+
+MILESTONE 1 (BACKEND)
+
+Predisponiamo un’API per salvare nel database una nuova recensione legata ad un film
+Testiamola su postman e verifichiamo che nel DB venga effettivamente inserita una nuova recensione
+
+MILESTONE 2 (FRONTEND)
+
+Creiamo un componente che contenga il form per le recensioni
+Inseriamo questo componente nella pagina di dettaglio del film
+All’invio del form, la nuova recensione viene salvata sul database e visualizzata nella pagina, in fondo alle altre
+
+BONUS:
+
+Inseriamo una validazione nel form di recensione
+
+
+
+
+
+###
+esercizio di oggi: Movies Reviews
+
+repo: webapp-react
+
+Esercizio
+Concludiamo migliorando l’esperienza sulla nostra SPA, inserendo un loader.
+
+creiamo un componente loader
+Questo componente deve poter apparire su qualunque pagina della nostra app.
+Creiamo e sfruttiamo un Context per dare la possibilità ad ogni componente di attivare o disattivare il loader sulla propria pagina
+
+BONUS:
+
+Personalizziamo l’aspetto della nostra app col CSS
