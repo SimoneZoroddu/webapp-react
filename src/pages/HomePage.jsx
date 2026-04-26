@@ -34,15 +34,21 @@ export default function HomePage() {
                 {
                     films.map((film, index) => (
                         <div key={index} className="col g-3">
-                            <div className="card h-100 bg-black text-white mx-auto" style={{ width: '18rem' }}>
-                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title} />
-                                <div className="card-body">
-                                    <h3 className="card-title mt-2 text-center">{film.title}</h3>
-                                    <div className="card-text mt-2"><span className="text-warning">Film Director:</span> {film.director}</div>
-                                    <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
-                                    <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
-                                    <Link to={`/films/${film.id}`} className="text-white d-flex justify-content-center text-decoration-none bg-secondary mt-2 rounded mx-5">Dettagli</Link>
-                                </div>
+                            <div className="card h-100 bg-black text-white mx-auto film_card" style={{ width: '18rem' }}>
+                                <Link to={`/films/${film.id}`} className="">
+                                    <div id="overlay" className="text-center">
+                                        <div className="text-white-50">Premi per i Dettagli</div>
+                                        <i className="bi bi-eye text-white"></i>
+                                        <div className="card-body text-white">
+                                            <h3 className="card-title mt-2 text-center text-success">{film.title}</h3>
+                                            <div className="card-text mt-2"><span className="text-warning">Film Director:</span> {film.director}</div>
+                                            <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
+                                            <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
+                                            <div className="textwhite">{film.abstract}</div>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100 img_hover" alt={film.title} />
                             </div>
                         </div>
                     ))

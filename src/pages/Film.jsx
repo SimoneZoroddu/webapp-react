@@ -57,8 +57,8 @@ export default function Film() {
                             </div>
                             < FormNewMovie filmId={filmId} setAddNewReviewCheck={setAddNewReviewCheck} />
                             {
-                                film.reviews?.map((review, index) => (
-                                    <div key={index}>
+                                film.reviews?.map(review => (
+                                    <div key={review.id}>
                                         <div className="text-primary">{review.name}</div>
                                         <div className="text-danger"><span className="text-warning">{starsVote(review.vote)}</span> {film.title}</div>
                                         <div className="text-white">{review.text}</div>
@@ -72,59 +72,3 @@ export default function Film() {
         </div>
     )
 }
-
-
-/*
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-*/
-
-/*
-{
-                    film.map((film, index) => (
-                        <div key={index} className="col">
-                            <div className="card h-100 bg-black text-white mx-auto" style={{ width: '18rem' }}>
-                                <img src={`http://localhost:${port}/${film.image}`} className="card-img-top h-100" alt={film.title} />
-                                <div className="card-body">
-                                    <h3 className="card-title text-center mt-2">{film.title}</h3>
-                                    <div className="card-text"><span className="text-warning">Film Director :</span> {film.director}</div>
-                                    <div className="mt-2"><span className="text-danger">Genre :</span> {film.genre}</div>
-                                    <div className="mt-2"><span className="text-primary">Release :</span> {film.release_year}</div>
-                                    <FormNewMovie filmId={filmId} setAddNewReviewCheck={setAddNewReviewCheck} />
-                                    <div>Recensioni :</div>
-                                    {
-                                        film.reviews?.map((review, index) => (
-                                            <div key={index}>
-                                                <div className="text-warning">{review.name}</div>
-                                                <div className="text-danger">{starsVote(review.vote)} {film.title}</div>
-                                                <div>{review.text}</div>
-                                            </div>
-                                        ))
-                                    }
-                                    <Link to='/' className="text-danger d-flex justify-content-center text-decoration-none bg-primary rounded mx-5 mt-2">Torna alla Home</Link>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
-
-
-
-
-
-
-
-*/
