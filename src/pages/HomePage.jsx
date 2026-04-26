@@ -41,7 +41,7 @@ export default function HomePage() {
                                     <div className="card-text mt-2"><span className="text-warning">Film Director:</span> {film.director}</div>
                                     <div className="mt-2"><span className="text-danger">Genre:</span> {film.genre}</div>
                                     <div className="mt-2"><span className="text-primary">Release:</span> {film.release_year}</div>
-                                    <Link to={`/films/${film.id}`} className="text-danger d-flex justify-content-center text-decoration-none bg-primary mt-2 rounded mx-5">Dettagli</Link>
+                                    <Link to={`/films/${film.id}`} className="text-white d-flex justify-content-center text-decoration-none bg-secondary mt-2 rounded mx-5">Dettagli</Link>
                                 </div>
                             </div>
                         </div>
