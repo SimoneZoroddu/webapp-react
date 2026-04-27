@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
-import FormNewMovie from "../components/FormNewReview"
+import FormNewMovie from "../FormNewReview"
 import FilmReviews from './FilmReviews'
 
 

@@ -16,7 +16,7 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path='/films/:filmId' element={<Film />} />
             </Route>
-            <Route path='Admin' element={<Admin />} />
+            <Route path='admin' element={<Admin />} />
           </Routes>
         </BrowserRouter>
       </GlobalContextProvider>

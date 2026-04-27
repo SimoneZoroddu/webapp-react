@@ -2,8 +2,6 @@
 export default function FilmReviews({ film }) {
 
 
-
-
     function starsVote(vote) {
         return '★'.repeat(vote)
     }

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import AppHeader from "../components/AppHeader";
-import AppFooter from "../components/AppFooter";
+import AppHeader from "../components/DefaultLayout/AppHeader";
+import AppFooter from "../components/DefaultLayout/AppFooter";
 import { GlobalContextUse } from "../context/GlobalContext";
 import Loader from "../components/Loader";
 
