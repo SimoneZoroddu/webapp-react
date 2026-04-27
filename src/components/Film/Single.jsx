@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
-import FormNewMovie from "../FormNewReview"
-import FilmReviews from './FilmReviews'
+import FormNewMovie from "./FormNewReview"
+import FilmReviews from './Reviews'
 
 
 export default function FilmSingle() {

@@ -1,4 +1,4 @@
-import FilmSingle from "../components/Film/FilmSingle"
+import FilmSingle from "../components/Film/Single"
 
 
 
